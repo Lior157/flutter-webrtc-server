@@ -1,11 +1,10 @@
 package util
 
 import (
+	"flutter-webrtc-server/pkg/logger"
 	"sync"
 	"sync/atomic"
 	"time"
-
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/logger"
 )
 
 type val struct {

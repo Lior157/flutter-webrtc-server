@@ -3,7 +3,12 @@ package signaler
 import (
 	"crypto/hmac"
 	"crypto/sha1"
-	"encoding/base64"
+	"flutter-webrtc-server/pkg/logger"
+	"flutter-webrtc-server/pkg/turn"
+	"flutter-webrtc-server/pkg/util"
+	"flutter-webrtc-server/pkg/websocket"
+
+	//"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"net"
@@ -11,11 +16,6 @@ import (
 	"net/url"
 	"strings"
 	"time"
-
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/logger"
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/turn"
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/util"
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/websocket"
 )
 
 const (
@@ -128,7 +128,7 @@ func (s *Signaler) HandleTurnServerCredentials(writer http.ResponseWriter, reque
 	turnUsername := fmt.Sprintf("%d:%s", timestamp, username)
 	hmac := hmac.New(sha1.New, []byte(sharedKey))
 	hmac.Write([]byte(turnUsername))
-	turnPassword := base64.RawStdEncoding.EncodeToString(hmac.Sum(nil))
+	//turnPassword := base64.RawStdEncoding.EncodeToString(hmac.Sum(nil))
 	/*
 		{
 		     "username" : "12334939:mbzrxpgjys",
@@ -151,13 +151,19 @@ func (s *Signaler) HandleTurnServerCredentials(writer http.ResponseWriter, reque
 
 	*/
 	ttl := 86400
-	host := fmt.Sprintf("%s:%d", s.turn.Config.PublicIP, s.turn.Config.Port)
+	//host := fmt.Sprintf("%s:%d", s.turn.Config.PublicIP, s.turn.Config.Port)
 	credential := TurnCredentials{
-		Username: turnUsername,
-		Password: turnPassword,
+		Username: "8mfCkMfkGaiJuzyZ-rgDCFWTpPqNvCSQQRTJKINgrtmkJhJBOM8xT_4oVnU2BL5CAAAAAF9ADHNMaW9yMTU3", //turnUsername,
+		Password: "9f834594-e3d8-11ea-a8df-0242ac140004",                                                 // turnPassword,
 		TTL:      ttl,
 		Uris: []string{
-			"turn:" + host + "?transport=udp",
+			//"turn:" + host + "?transport=udp",
+			"turn:eu-turn6.xirsys.com:80?transport=udp",
+			"turn:eu-turn6.xirsys.com:3478?transport=udp",
+			"turn:eu-turn6.xirsys.com:80?transport=tcp",
+			"turn:eu-turn6.xirsys.com:3478?transport=tcp",
+			"turns:eu-turn6.xirsys.com:443?transport=tcp",
+			"turns:eu-turn6.xirsys.com:5349?transport=tcp",
 		},
 	}
 	s.expresMap.Set(turnUsername, credential, int64(ttl))
@@ -311,8 +317,8 @@ func (s *Signaler) HandleNewWebSocket(conn *websocket.WebSocketConn, request *ht
 		for _, peer := range s.peers {
 
 			if peer.conn == conn {
-				peer_id = peer.info.ID;
-			}else{
+				peer_id = peer.info.ID
+			} else {
 				leave := map[string]interface{}{
 					"type": "leave",
 					"data": peer.info.ID,
@@ -322,7 +328,7 @@ func (s *Signaler) HandleNewWebSocket(conn *websocket.WebSocketConn, request *ht
 		}
 
 		logger.Infof("Remove peer %s", peer_id)
-		if(peer_id == "") {
+		if peer_id == "" {
 			logger.Infof("Leve peer id not found")
 			return
 		}

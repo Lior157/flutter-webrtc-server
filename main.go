@@ -1,12 +1,12 @@
 package main
 
 import (
+	"flutter-webrtc-server/pkg/logger"
+	"flutter-webrtc-server/pkg/signaler"
+	"flutter-webrtc-server/pkg/turn"
+	"flutter-webrtc-server/pkg/websocket"
 	"os"
 
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/logger"
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/signaler"
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/turn"
-	"github.com/cloudwebrtc/flutter-webrtc-server/pkg/websocket"
 	"gopkg.in/ini.v1"
 )
 
@@ -40,7 +40,7 @@ func main() {
 
 	port, err := cfg.Section("general").Key("port").Int()
 	if err != nil {
-		port = 8086
+		port = 443
 	}
 
 	htmlRoot := cfg.Section("general").Key("html_root").String()
