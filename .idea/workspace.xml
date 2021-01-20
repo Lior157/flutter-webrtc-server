@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bcb6c35-8416-4232-ac6a-23493798cc50" name="Default Changelist" comment="v2 dont work build">
+    <list default="true" id="5bcb6c35-8416-4232-ac6a-23493798cc50" name="Default Changelist" comment=" b">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.dart.js" afterDir="false" />
@@ -155,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="download version" />
     <MESSAGE value="v2 dont work build" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2 dont work build" />
+    <MESSAGE value=" b" />
+    <option name="LAST_COMMIT_MESSAGE" value=" b" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -181,9 +182,9 @@
       <screen x="-1920" y="-425" width="1920" height="1040" />
     </state>
     <state width="938" height="385" key="GridCell.Tab.0.right/0.0.1366.728/-1920.-425.1920.1040@-1920.-425.1920.1040" timestamp="1611175385796" />
-    <state x="-1368" y="-172" key="Vcs.Push.Dialog.v2" timestamp="1611175299323">
+    <state x="-1368" y="-172" key="Vcs.Push.Dialog.v2" timestamp="1611175819807">
       <screen x="-1920" y="-425" width="1920" height="1040" />
     </state>
-    <state x="-1368" y="-172" key="Vcs.Push.Dialog.v2/0.0.1366.728/-1920.-425.1920.1040@-1920.-425.1920.1040" timestamp="1611175299323" />
+    <state x="-1368" y="-172" key="Vcs.Push.Dialog.v2/0.0.1366.728/-1920.-425.1920.1040@-1920.-425.1920.1040" timestamp="1611175819807" />
   </component>
 </project>
