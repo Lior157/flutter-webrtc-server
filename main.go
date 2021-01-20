@@ -7,7 +7,6 @@ import (
 	"flutter-webrtc-server/pkg/websocket"
 	"gopkg.in/ini.v1"
 	"os"
-	"strconv"
 )
 
 func main() {
@@ -40,9 +39,10 @@ func main() {
 
 	port, err := cfg.Section("general").Key("port").Int()
 	if err != nil {
-		port = 3000
+		port = 30000
 	}
-	port, _ = strconv.Atoi(os.Getenv("PORT"))
+	//port, _ = strconv.Atoi(os.Getenv("PORT"))
+	port = 30000
 	htmlRoot := cfg.Section("general").Key("html_root").String()
 
 	config := websocket.DefaultConfig()
