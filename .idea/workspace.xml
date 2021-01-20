@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bcb6c35-8416-4232-ac6a-23493798cc50" name="Default Changelist" comment=" b">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5bcb6c35-8416-4232-ac6a-23493798cc50" name="Default Changelist" comment="ccc">
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/websocket/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/websocket/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/main.dart.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.dart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/main.dart.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/main.dart.js.map" afterDir="false" />
     </list>
@@ -158,7 +155,8 @@
     <MESSAGE value="download version" />
     <MESSAGE value="v2 dont work build" />
     <MESSAGE value=" b" />
-    <option name="LAST_COMMIT_MESSAGE" value=" b" />
+    <MESSAGE value="ccc" />
+    <option name="LAST_COMMIT_MESSAGE" value="ccc" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
