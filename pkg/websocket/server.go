@@ -21,7 +21,7 @@ type WebSocketServerConfig struct {
 func DefaultConfig() WebSocketServerConfig {
 	return WebSocketServerConfig{
 		Host:           "0.0.0.0",
-		Port:           3000,
+		Port:           443,
 		HTMLRoot:       "web",
 		WebSocketPath:  "/ws",
 		TurnServerPath: "/api/turn",
