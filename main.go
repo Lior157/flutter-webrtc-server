@@ -40,9 +40,9 @@ func main() {
 
 	port, err := cfg.Section("general").Key("port").Int()
 	if err != nil {
-		port = 443
+		port = 3000
 	}
-
+	port = 3000
 	htmlRoot := cfg.Section("general").Key("html_root").String()
 
 	config := websocket.DefaultConfig()
